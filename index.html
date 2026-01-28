@@ -14,10 +14,10 @@
             <nav>
                 <h2 class="logo">XianDevs</h2>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a onclick="scrollToSection('home')">Home</a></li>
+                    <li><a onclick="scrollToSection('about')">About</a></li>
+                    <li><a onclick="scrollToSection('projects')">Projects</a></li>
+                    <li><a onclick="scrollToSection('contact')">Contact</a></li>
                 </ul>
                  <button id="darkModeToggle">☀️</button>
             </nav>
@@ -26,9 +26,9 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hello, I'm <span>Cristian E. Gier</span></h1>
+                    <h1>Hello, I'm <span id="typed-name">Cristian E. Gier</span></h1>
                     <p>Frontend Developer & UI/UX Designer</p>
-                    <button onclick="scrollToContact()">Message Me</button>
+                    <button onclick="scrollToSection('contact')">Message Me</button>
                      <a href="YourCV.pdf" download><button class="cv-btn">Download CV</button></a>
                  </div>
                  <div class="hero-image">
