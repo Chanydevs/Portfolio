@@ -22,6 +22,7 @@ header {
   position: sticky;
   top: 0;
   transition: background 0.3s;
+  z-index: 100000;
 }
 body.light-mode .logo {
   color: #000;
@@ -45,6 +46,7 @@ nav ul li a {
   color: white;
   text-decoration: none;
   transition: color 0.3s;
+  cursor: pointer;
 }
 #darkModeToggle{
   cursor:pointer;
@@ -117,16 +119,29 @@ body.light-mode nav ul li a {
   display: flex;
   justify-content: center;
 }
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  height: 500px;
-  margin-left: 300px;
+#typed-name::after {
+  content: '|';
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
 }
-
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+.hero-image img {
+ width: 300px;         
+  height: 300px;
+  border-radius: 50%;     
+  object-fit: cover;      
+  border: 5px solid #0ec8d2; 
+  box-shadow: 0 10px 30px rgba(236, 236, 236, 0.4);
+  transition: transform 0.5s, box-shadow 0.5s;
+  margin-left: 250px;
+}
+.hero-image img:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
 .section {
   padding: 60px 40px;
   text-align: center;
