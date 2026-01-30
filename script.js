@@ -4,6 +4,52 @@ function scrollToSection(sectionId) {
   });
 }
 
+  function startRoleTyping(options) {
+  const el = document.getElementById(options.elId);
+  if (!el) return;
+  const roles = options.roles || [];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  const type = () => {
+    const current = roles[roleIndex];
+    if (!deleting) {
+      el.textContent = current.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(type, options.pauseAfter || 1400);
+        return;
+      }
+      setTimeout(type, options.typeSpeed || 90);
+    } else {
+      el.textContent = current.slice(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(type, options.pauseBetween || 300);
+        return;
+      }
+      setTimeout(type, options.deleteSpeed || 40);
+    }
+  };
+
+  type();
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  startRoleTyping({
+    elId: 'typed-role',
+    roles: ['Frontend Developer','UI/UX Designer'],
+    typeSpeed: 90,
+    deleteSpeed: 40,
+    pauseAfter: 1500,
+    pauseBetween: 400
+  });
+});
 const toggle = document.getElementById("darkModeToggle");
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
@@ -14,39 +60,3 @@ toggle.addEventListener("click", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const typedName = document.getElementById("typed-name");
-  const nameText = "Cristian Gier"; 
-  const typingSpeed = 150;
-  const erasingSpeed = 100;
-  const delayBetween = 1500;
-
-  let index = 0;
-  let isDeleting = false;
-
-  function type() {
-    if (!isDeleting) {
-    
-      typedName.textContent = nameText.substring(0, index + 1);
-      index++;
-      if (index === nameText.length) {
-        isDeleting = true;
-        setTimeout(type, delayBetween); 
-      } else {
-        setTimeout(type, typingSpeed);
-      }
-    } else {
-     
-      typedName.textContent = nameText.substring(0, index - 1);
-      index--;
-      if (index === 0) {
-        isDeleting = false;
-        setTimeout(type, typingSpeed);
-      } else {
-        setTimeout(type, erasingSpeed);
-      }
-    }
-  }
-
-  type(); 
-});
