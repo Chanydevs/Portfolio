@@ -27,7 +27,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Hello, I'm <span id="typed-name">Cristian E. Gier</span></h1>
-                    <p>Frontend Developer & UI/UX Designer</p>
+                   <p><span id="typed-role"></span></p>
                     <button onclick="scrollToSection('contact')">Message Me</button>
                      <a href="YourCV.pdf" download><button class="cv-btn">Download CV</button></a>
                  </div>
@@ -38,36 +38,67 @@
         </section>
 
         <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>
-               I am Entry-level Frontend Developer and UI/UX Designer with hands-on experience building responsive, user-centered web and mobile interfaces. <br> Skilled in translating ideas into functional designs using modern frontend technologies and usability principles.
-            </p>
+            <div class="aboutme-content">
+                <div class="aboutme-text">
+                    <h2>About Me</h2>
+                        <p>
+                        I am Entry-level Frontend Developer and UI/UX Designer with hands-on experience building responsive, user-centered web and mobile interfaces. <br> Skilled in translating ideas into functional designs using modern frontend technologies and usability principles.
+                        </p>
+                </div>
+                <div class="about-image">
+                        <img src="about-img.jpg" alt="My Photo">
+                </div>
+             </div>
         </section>
-
+    
         <section id="projects" class="section">
             <h2>Projects</h2>
             <div class="projects-container">
                 <div class="project-card">
-                    <h3>Health Record and Analytics System (TechClinic) </h3>
-                    <p>Designed and developed a web-based health management system for medical staff. </p>
+                     <div class="project-thumb">
+                        <img src="tech.jpg" alt="TechClinic">
+                    </div>
+                    <div class="project-content">
+                        <h3>Health Record and Analytics System (TechClinic)</h3>
+                        <p>Designed and developed a web-based health management system for medical staff.</p>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>Church Website(JMSLM)</h3>
-                    <p>Designed and developed a responsive church website </p>
+                    <div class="project-thumb">
+                        <img src="church-img.png" alt="Church website screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>Church Website (JMSLM)</h3>
+                        <p>Designed and developed a responsive church website.</p>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>Bike Shop Website (Wheel C) </h3>
-                    <p>Built a full-stack bicycle e-commerce web app. </p>
+                    <div class="project-thumb">
+                        <img src="a.jpg" alt="Bike shop screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>Bike Shop Website (Wheel C)</h3>
+                        <p>Built a full-stack bicycle e-commerce web app.</p>
+                    </div>
                 </div>
-                 <div class="project-card">
-                    <h3>UI Application (Awakening Cup)</h3>
-                    <p>Designed a mobile app focused on bike and accessories selling and navigation with a user-friendly approach.</p>
+                <div class="project-card">
+                    <div class="project-thumb">
+                        <img src="coffe-img.png" alt="Awakening Cup UI screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>UI Application (Awakening Cup)</h3>
+                        <p>Designed a mobile app focused on bike and accessories selling and navigation with a user-friendly approach.</p>
+                    </div>
                 </div>
-                 <div class="project-card">
-                    <h3>UI Application (Wheel See)</h3>
-                    <p>Designed an intuitive coffee ordering app emphasizing clean navigation and visual hierarchy</p>
+                <div class="project-card">
+                    <div class="project-thumb">
+                        <img src="bike-img.png" alt="Wheel See UI screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>UI Application (Wheel See)</h3>
+                        <p>Designed an intuitive coffee ordering app emphasizing clean navigation and visual hierarchy.</p>
+                    </div>
                 </div>
-                
             </div>
         </section>
 
@@ -82,7 +113,8 @@
         </section>
 
         <footer>
-            <p>© 2026 Your Name. All Rights Reserved.</p>
+            <p>Designed and Develop by Cristian Gier</p>
+              <p>Copyright © 2026 XianDevs.</p>
         </footer>
 
         <script src="script.js"></script>
